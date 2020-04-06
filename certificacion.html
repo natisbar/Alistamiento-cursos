@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Guía alistamiento de cursos</title>
+</head>
+
+<header>
+  <a href="index.html"><div class="imagen-efecto"><img src="images/home.png" width=3% height=3% alt="Home"></div></a>
+  <h1><center>Certificación</center></h1>
+
+</header>
+<body>
+
+
+<p></p>
+<br>
+<style type="text/css">
+.column {
+  padding: 0px;
+  float: left;
+  background-color:white;
+  /*padding: 10px;*/
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+    display: table;
+    clear: both;
+}
+
+</style>
+
+<div class="row" align="center">
+  <div class="column" style="width:33.3%;">
+
+    <div class="product">
+        <div class="content">
+          <h2>1</h2>
+          <div class="img_content">
+            <img src="images/agenda.png" width=40% height=40% alt="">
+          </div>
+          <button class=main_botton id="agenda">Diseñar agenda nueva</button>
+        </div>
+    </div>
+  </div>
+  <div class="column" style="width:33.3%;">
+    <div class="product">
+          <div class="content">
+            <h2>2</h2>
+            <div class="img_content">
+              <img src="images/enlace.png" width=40% height=40% alt="">
+            </div>
+            <a href="https://www.loom.com/share/d303f064abc443f79ffe075041c898bd" target="_blank"><button class=main_botton id="enlaces">Revisar enlaces</button></a>
+          </div>
+      </div>
+  </div>
+  <div class="column" style="width:33.3%;">
+    <div class="product">
+          <div class="content">
+            <h2>3</h2>
+            <div class="img_content">
+              <img src="images/guia.png" width=35% height=35% alt="">
+            </div>
+            <button class=main_botton id="guias">Actualizar guías</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+ <!-- The Agenda Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    
+    <br><br>
+    <div class="row" align="center">
+      <div class="column" style="width:50%;">
+        <h2><b>Qué debo hacer con la agenda en Certificación?</b></h2>
+      </div>
+      <div class="column" style="width:50%;">
+        <h2><b>Documentación de interes para la agenda</b></h2>
+      </div>
+    </div>
+
+    <div class="row" align="center">
+      <div class="column" style="width:50%;">
+        <a href="https://www.loom.com/share/9cfbdbcc4ac64e67aaa51ebf79c43974" target="_blank"><div class="imagen-efecto"><img src="images/play.png" width=20% height=20% alt="" align="center"></div></a>
+        <a href="https://www.loom.com/share/9cfbdbcc4ac64e67aaa51ebf79c43974" target="_blank"><div class="imagen-efecto"><img src="images/loom.png" width=60% height=60% alt="" align="center"></div></a>
+      </div>
+      <div class="column" style="width:50%;">
+        <p><b>Para la estructura de la descripción de la actividad (columna 4):</b> Lineamientos Tecnopedagógicos V4.0 - Pag 44 y 45</p>
+        <br>
+        <p><b>Para establecer fechas en la agenda, revise la Programación Académica: </b><a href="Fechas_periodos_2020.pdf" target="_blank"download="programación académica 2020">Ver programación académica</a></p>
+        
+        <!-- <embed src="Fechas_periodos_2020.pdf" type="application/pdf" width="100%"/> -->
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("agenda");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
