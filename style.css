@@ -1,0 +1,85 @@
+
+
+.products{
+  background-image: url("../images/fondo.png");
+  height: 100px;
+  background-size:cover;
+  background-position:center top;
+  padding: 20%;
+  /* padding-bottom: 20%; */
+  display:inline-flex;
+}
+
+.product{
+  padding: 10%;
+  width: 80%
+}
+
+.product .content{
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 0 5px #947c7c;
+}
+
+.img_content{
+  text-align: center;
+}
+
+.main_botton{
+  background-color: #9CC5F5;
+  width: 100%;
+  padding: 10px;
+  font-size: var(--normal);;
+  color: black;
+  border: 0;
+  cursor:pointer;
+  border-radius: 5px;
+}
+
+.main_botton:hover{
+  background-color: #0E7AF8;
+  box-shadow: 0 0 5px #947c7c;
+  color: white;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 50px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  height: 100%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+} 
+
+.imagen-efecto:hover {filter: opacity(.5);}
+
