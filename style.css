@@ -40,6 +40,7 @@
   background-color: #0E7AF8;
   box-shadow: 0 0 5px #947c7c;
   color: white;
+  transition:all .5s ease-in-out;
 }
 
 .modal {
@@ -51,11 +52,7 @@
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-<<<<<<< HEAD
   overflow: auto; /* Enable scroll if needed */
-=======
-  overflow: scroll; /* Enable scroll if needed */
->>>>>>> 7ba8e0872d1501e447638f7257627ab16203970a
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
