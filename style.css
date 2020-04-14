@@ -1,4 +1,24 @@
+html {
+	box-sizing: border-box;
+	font-size: 14px;
+}
 
+body {
+	font-family: Verdana;
+	/*font-size: 1.6rem;*/
+}
+
+.textogood{
+  /* top: 5%; */
+  left: 10%;
+  width: 80%;
+  margin:auto;
+  /* padding: 5%; */
+}
+
+.identidad{
+  margin:auto;
+}
 
 .products{
   background-image: url("../images/fondo.png");
