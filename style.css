@@ -104,3 +104,21 @@ body {
 
 .imagen-efecto:hover {filter: opacity(.5);}
 
+.contenedor {
+	max-width: 1200px;
+	width: 100%;
+	margin: auto;
+}
+
+.site-footer {
+	background-color: #9CC5F5;
+  padding: 1%; 
+  width: 100%;
+	/* margin-top: 4rem; */
+	text-align: center;
+}
+
+.no-margin {
+  margin: 0;
+  color: black;
+}
