@@ -122,3 +122,26 @@ body {
 } 
 
 .imagen-efecto:hover {filter: opacity(.5);}
+
+.column {
+  padding: 0px;
+  float: left;
+  background-color: white;
+  /*padding: 10px;*/
+}
+
+/* Clear floats after the columns */
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.video{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
