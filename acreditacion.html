@@ -93,7 +93,7 @@
             <div class="img_content">
               <img src="images/restriccion.png" width=60% height=60% alt="">
             </div>
-            <a href="https://www.loom.com/share/8666ec11795747eca26460919038108a" target="_blank"><button class=main_botton>5. Sobre las restricciones</button></a>
+            <button class=main_botton id="restricciones">5. Sobre las restricciones</button>
           </div>
       </div>
   </div>
@@ -150,7 +150,7 @@
     <div class="row" align="center">
       <div class="column" style="width:100%;">
         <div class="textogood" align="left">
-          <p>Apreciado Diseñador, a continuación encontrará dos videos que le guiarán sobre el proceso a adelantar para la verificación del <b>rastreo de finalización de la actividad</b> y la verificación del correcto funcionamiento de <b>las restricciones</b>, evitando así futuros inconvenientes con éstas y la <b>Barra de estado de finalización</b>.</p>
+          <p>A continuación encontrará dos videos que le permitirán verificar que se han configurado de manera correcta el rastreo de finalización de la actividad y las restricciones evitando futuros inconvenientes en la Barra de estado de finalización. Haga clic en cada ícono para consultarlos.</b>.</p>
         </div>
       </div>
     </div>
@@ -158,12 +158,15 @@
     <div class="row" align="center">
       <div class="column" style="width:50%;">
         <div class="textogood">
-        <h3><b>Verificando finalización de la actividad</b></h3>
+        <div class="textogood">
+          <h3><b>Verificando finalización de la actividad</b></h3>
+        </div>
         </div>
       </div>
       <div class="column" style="width:50%;">
-        <div class="textogood"></div>
-        <h3><b>Verificando funcionamiento de restricciones</b></h3>
+        <div class="textogood">
+          <h3><b>Verificando funcionamiento de restricciones</b></h3>
+        </div>
       </div>
     </div>
 
@@ -178,6 +181,9 @@
       </div>
     </div>
     <br>
+    <div class="textogood" align="left">
+      <p>Si requiere información adicional, puede consultarla en el documento Lineamientos Tecnopedagógicos para el diseño de cursos virtuales versión 4.0 páginas 26, 152, 188 y 189.</p>
+    </div>
   </div>
 </div>
 
@@ -265,6 +271,24 @@
   </div>
 </div>
 
+
+<!-- The restricciones Modal -->
+<div id="myModal5" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content" style="width: 70%; height:50%;">
+    <span class="close">&times;</span>
+    <div class="row" align="center">
+      <div class="column" style="width:100%;">
+        <div class="textogood" align="left">
+          <p>Para configurar de manera correcta las restricciones del entorno de Información inicial, puede consultar el siguiente vídeo denominado ¿Qué elementos deben tener las restricciones de normas y condiciones? Recuerde que puede ampliar estas indicaciones revisando el documento Lineamientos Tecnopedagógicos para el diseño de cursos virtuales versión 4.0.</p>
+        </div>
+        <a href="https://www.loom.com/share/8666ec11795747eca26460919038108a" target="_blank"><img class="imagen-efecto" src="images/play.png" width=5% height=5% alt="" align="center"></a>
+        <a href="https://www.loom.com/share/8666ec11795747eca26460919038108a" target="_blank"><img class="imagen-efecto" src="images/loom.png" width=20% height=20% alt="" align="center"></a> 
+      </div>
+    </div>
+  </div>
+</div>
+
 <footer class="site-footer">
   <div class="contenedor">
     <div class="">
@@ -282,6 +306,7 @@ var modal1 = document.getElementById("myModal1");
 var modal2 = document.getElementById("myModal2");
 var modal3 = document.getElementById("myModal3");
 var modal4 = document.getElementById("myModal4");
+var modal5 = document.getElementById("myModal5");
 
 // Get the button that opens the modal
 var btn = document.getElementById("moodle");
@@ -289,6 +314,7 @@ var btn1 = document.getElementById("verifica");
 var btn2 = document.getElementById("agenda");
 var btn3 = document.getElementById("syllabus");
 var btn4 = document.getElementById("recursos");
+var btn5 = document.getElementById("restricciones");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -296,6 +322,7 @@ var span1 = document.getElementsByClassName("close")[1];
 var span2 = document.getElementsByClassName("close")[2];
 var span3 = document.getElementsByClassName("close")[3];
 var span4 = document.getElementsByClassName("close")[4];
+var span5 = document.getElementsByClassName("close")[5];
 
 // When the user clicks the button, open the modal 
 
@@ -314,6 +341,9 @@ btn3.onclick = function() {
 btn4.onclick = function() {
   modal4.style.display = "block";
 }
+btn5.onclick = function() {
+  modal5.style.display = "block";
+}
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
@@ -330,6 +360,9 @@ span3.onclick = function() {
 }
 span4.onclick = function() {
   modal4.style.display = "none";
+}
+span5.onclick = function() {
+  modal5.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -348,6 +381,9 @@ window.onclick = function(event) {
   }
   else if (event.target == modal4) {
     modal4.style.display = "none";
+  }
+  else if (event.target == modal5) {
+    modal5.style.display = "none";
   }
 }
 </script>

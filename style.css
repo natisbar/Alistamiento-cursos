@@ -124,7 +124,7 @@ body {
 
 
 /* barra de navegación vertical */
-#mySidenav a {
+/* #mySidenav a {
   position: absolute;
   left: -80px;
   transition: 0.3s;
@@ -148,4 +148,4 @@ body {
 #gestor {
   top: 80px;
   background-color: #2196F3;
-}
+} */
