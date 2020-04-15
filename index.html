@@ -10,8 +10,13 @@
 </head>
 
 <header>
-    <!-- class="imagen-efecto" -->
-    <div class="identidad" align="right">
+    <div class="identidad" style="display: inline">
+        <!-- <a href="rol.html"> -->
+        <img class="imagen-efecto" src="images/ayuda.png" width=40px alt="Home" onclick="openNav()">
+        <!-- </a> -->
+    </div>
+
+    <div class="identidad" style="display: inline; position: absolute; right:1%">
         <img src="images/logofinal.png" width=300px alt="Logo UNAD y VIMEP">
     </div>
 </header>
@@ -87,21 +92,5 @@
         </div>
     </div>
 
-    <div class="row" align="center">
-        <br><br>
-        <div class="column" style="width:100%;">
-            <button class=main_botton1 style="width:25%;" onclick="openNav()">Dificultades técnicas</button></a>
-        </div>
-    </div>
-
     <br><br><br><br><br>
-    <!-- <script src="Js/cerrarModal.js"></script> -->
-    <script>
-        function openNav() {
-            document.getElementById("myNav").style.height = "100%";
-        }
-
-        function closeNav() {
-            document.getElementById("myNav").style.height = "0%";
-        }
-    </script>
+    <script src="Js/cerrarModal.js"></script>
