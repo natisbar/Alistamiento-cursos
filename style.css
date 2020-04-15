@@ -63,6 +63,25 @@ body {
   transition:all .5s ease-in-out;
 }
 
+.main_botton1{
+  background-color: #F2BA01;
+  width: 100%;
+  padding: 10px;
+  font-size: var(--normal);;
+  color: black;
+  border: 0;
+  cursor:pointer;
+  border-radius: 5px;
+}
+
+.main_botton1:hover{
+  background-color: #ED7203;
+  box-shadow: 0 0 5px #947c7c;
+  color: white;
+  transition:all .5s ease-in-out;
+}
+
+
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -103,49 +122,3 @@ body {
 } 
 
 .imagen-efecto:hover {filter: opacity(.5);}
-
-.contenedor {
-	width: 100%;
-	margin: auto;
-}
-
-.site-footer {
-	background-color: #9CC5F5;
-  padding: 1%; 
-  width: 100%;
-	margin-top: 10%; 
-	text-align: center;
-}
-
-.no-margin {
-  margin: 0;
-  color: black;
-}
-
-
-/* barra de navegación vertical */
-/* #mySidenav a {
-  position: absolute;
-  left: -80px;
-  transition: 0.3s;
-  padding: 15px;
-  width: 100px;
-  text-decoration: none;
-  font-size: 14px;
-  color: white;
-  border-radius: 0 5px 5px 0;
-}
-
-#mySidenav a:hover {
-  left: 0;
-}
-
-#rol {
-  top: 20px;
-  background-color: #4CAF50;
-}
-
-#gestor {
-  top: 80px;
-  background-color: #2196F3;
-} */
