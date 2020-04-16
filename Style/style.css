@@ -156,13 +156,9 @@ body {
     clear: both;
 }
 
-.video {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-}
+
+/* 
+//bara fija normal
 
 .navbar {
     overflow: hidden;
@@ -171,8 +167,6 @@ body {
     top: 0;
     right: 0;
     width: 100%;
-    /* padding: 1%; */
-    /* padding: 1% 1% 1% 30px; */
     padding-top: 15px;
     padding-bottom: 15px;
 }
@@ -187,9 +181,82 @@ body {
     font-size: 14px;
 }
 
+.navbar a.active {
+    background-color: rgb(199, 202, 202);
+    color: black;
+    font-weight: bold;
+}
+
 .navbar a:hover {
     background: rgb(199, 202, 202);
     color: white;
+} */
+
+.navbar {
+    overflow: hidden;
+    background-color: #F4F6F6;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    top: 0;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+    background-color: rgb(199, 202, 202);
+}
+
+
+/* BOTON AYUDA */
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 .main {

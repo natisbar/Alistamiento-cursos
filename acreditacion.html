@@ -15,9 +15,19 @@
 <body>
     <div class="navbar">
         <a href="index.html">Inicio</a>
-        <a href="rol.html">Sobre mi rol</a>
-        <a href="#" id="gestor">Mi gestor</a>
-        <a href="acreditacion.html">Acreditación</a>
+        <div class="dropdown">
+            <button class="dropbtn">Ayuda 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="rol.html">Sobre mi rol</a>
+                <a href="#" id="gestor">¿Quién es mi gestor?</a>
+                <a href="#">Estados</a>
+            </div>
+        </div>
+        <!-- <a href="rol.html">Sobre mi rol</a>
+        <a href="#" id="gestor">Mi gestor</a> -->
+        <a class="active" href="acreditacion.html">Acreditación</a>
         <a href="certificacion.html">Certificación</a>
         <div class="identidad" style="display: inline; position: absolute; right:1%">
             <img src="images/logofinal.png" width=300px alt="Logo UNAD y VIMEP">
@@ -257,7 +267,10 @@
                             <p Align="left">En nContents se encuentra toda la documentación y lineamientos generados por la VIMEP, los cuales están asociados a la correcta configuración de cada uno de los recursos y actividades que el(la) diseñador(a) usa en el proceso
                                 de alistamiento del curso. Por favor consúltela para adelantar correctamente su proceso de Acreditación.
                             </p>
-                            <img src="images/lineamientosVIMEP.png" width=90% height=90% alt="" align="center">
+                            <p Align="left">Lineamientos VIMEP y documentación complementaria:</p>
+                            <img src="images/lineamientosVIMEP.png" width=90% alt="" align="center">
+                            <p Align="left">Guías para utilizar y añadir recursos <b>turnitin</b>:</p>
+                            <img src="images/turnitin.png" width=90% alt="" align="center">
                             <p></p>
                         </div>
                     </div>
