@@ -167,6 +167,8 @@ body {
 
 /* ultimo boton dificultades técnicas */
 
+
+/* 
 .overlay {
     height: 0%;
     width: 60%;
@@ -221,4 +223,35 @@ body {
         top: 15px;
         right: 35px;
     }
+} */
+
+.navbar {
+    overflow: hidden;
+    background-color: #ECE8E8;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover {
+    background: #ddd;
+    color: black;
+}
+
+.main {
+    padding: 16px;
+    margin-top: 50px;
+    /* height: 1500px; */
+    /* Used in this example to enable scrolling */
 }
