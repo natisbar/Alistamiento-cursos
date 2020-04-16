@@ -234,9 +234,8 @@ body {
     width: 100%;
     /* padding: 1%; */
     /* padding: 1% 1% 1% 30px; */
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .navbar a {
