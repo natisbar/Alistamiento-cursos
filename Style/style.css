@@ -127,6 +127,8 @@ body {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    position: fixed;
+    right: 18%;
 }
 
 .close:hover,
