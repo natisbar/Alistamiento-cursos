@@ -46,18 +46,18 @@ body {
     text-align: center;
 }
 
-.main_bottonA {
+.main_botton {
     background-color: #FD8D24;
     width: 60%;
     padding: 10px;
-    font-size: var(--normal);
+    font-size: 14px;
     color: white;
     border: 0;
     cursor: pointer;
     border-radius: 5px;
 }
 
-.main_bottonA:hover {
+.main_botton:hover {
     background-color: #FDAE54;
     box-shadow: 0 0 5px #947c7c;
     color: white;
@@ -68,7 +68,7 @@ body {
     background-color: #005680;
     width: 60%;
     padding: 10px;
-    font-size: var(--normal);
+    font-size: 14px;
     color: white;
     border: 0;
     cursor: pointer;
@@ -77,24 +77,6 @@ body {
 
 .main_bottonC:hover {
     background-color: #0079A8;
-    box-shadow: 0 0 5px #947c7c;
-    color: white;
-    transition: all .5s ease-in-out;
-}
-
-.main_botton1 {
-    background-color: #F2BA01;
-    width: 100%;
-    padding: 10px;
-    font-size: var(--normal);
-    color: black;
-    border: 0;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.main_botton1:hover {
-    background-color: #ED7203;
     box-shadow: 0 0 5px #947c7c;
     color: white;
     transition: all .5s ease-in-out;
