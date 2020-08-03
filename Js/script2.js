@@ -36,12 +36,14 @@ btn2.onclick = function() {
 btn3.onclick = function() {
     modal3.style.display = "block";
 }
-btn4.onclick = function() {
-    modal4.style.display = "block";
-}
 btn5.onclick = function() {
     modal5.style.display = "block";
 }
+btn4.onclick = function() {
+    modal4.style.display = "block";
+}
+
+
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
