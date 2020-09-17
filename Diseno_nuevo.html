@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="Style/style.css">
+    <title>Tips para el alistamiento de cursos</title>
+</head>
+
+<header></header>
+
+<body>
+    <div class="navbar">
+        <a href="index.html">Inicio</a>
+        <div class="dropdown botonactivo1">
+            <button class="dropbtn">Ayuda 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="rol.html">Sobre mi rol</a>
+                <a href="#" id="gestor">¿Quién es mi gestor?</a>
+                <a a href="tuto/story_html5.html">Tutorial alistamiento curso</a>
+            </div>
+        </div>
+        <!-- <a class="active" href="rol.html">Sobre mi rol</a>
+        <a href="#" id="gestor">Mi gestor</a> -->
+        <div class="dropdown">
+            <button class="dropbtn botonactivo2" role="link" onclick="location.href='acreditacion.html'">Acreditación
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="Diseno_nuevo.html">Diseño nuevo (326)</a>
+            </div>
+        </div>
+        <a href="certificacion.html">Certificación</a>
+        <div class="identidad" style="display: inline; position: absolute; right:1%">
+            <img src="images/logofinal.png" width=300px alt="Logo UNAD y VIMEP">
+        </div>
+    </div>
+
+    <div class="main">
+        <h1>
+            <center>Diseño nuevo</center>
+        </h1>
+        <div class="textogood" align="left">
+            <p>A continuación encuentra la relación de cursos solicitados para la oferta de los periodos regulares. Revise que su curso de diseño nuevo (peraca 326), no este en la lista, pues de estarlo debe dar prioridad al alistamiento, para acreditar
+                el curso y ofertarlo satisfactoriamente en el periodo regular que corresponda</p>
+        </div>
+
+        <div class="row" align="center">
+            <div class="column" style="width:100%;">
+                <div class="product" style="padding: 0">
+                    <div class="content">
+                        <div class="textogood" align="left" style="padding: 3%;">
+                            <iframe width="100%" height="700px" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vToeyD7uy1g8-C5vQr7S_3F5tVOQjN6Jdi9lWHmrJ1VtmgSaTY2QQ9POyD9Snyu_w/pubhtml?widget=true&amp;headers=false"></iframe>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The gestor Modal -->
+        <div id="mygestor" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content" style="width: 70%;">
+                <span class="close" id="closeModal_gestor"><button class="buttonmodal">&times;</button></span>
+
+                <div class="row" align="center">
+                    <div class="column" style="width:100%;">
+                        <div class="textogood" Align="left">
+                            <h2 align="center">¿Quién es mi gestor?</h2>
+                            <p>A través del siguiente video, conozca en dónde puede ubicar a su gestor.</p>
+                        </div>
+                        <div class="textogood" Align="left">
+                            <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/2e438dc92f4b4553921b5e950e81ffbd" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height:100%;"></iframe></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br><br>
+    <script src=" Js/script3.js "></script>
+    <script src="Js/cerrarModal.js"></script>
