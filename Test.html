@@ -1,127 +1,125 @@
-<!DOCTYPE html>
-
-<!-- You can also include your own CSS styles -->
-<link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
-
-<div class="form-style-10">
-    <title>File Transfer </title>
-
-    <form id="myForm" name="myForm">
-        <h1> File Transfer </h1>
-        <p></p>
-
-        <fieldset class="fields">
-            <div class="section"> Files </div>
-            <div class="inner-wrap">
-                <label for="File1"> File 1 </label>
-                <input type="file" name="File1" required />
-
-            </div>
-        </fieldset>
-
-        <p> </p>
-        <p id="incompleteWarning" class="hideClass"> Please select a file to transfer. </p>
-        <p id="bePatient" class="hideClass"> Please be patient while the file is being uploaded. Do not close or refresh the form. You will see a "transfer complete" message when the upload is finished.</p>
-
-        <input id="submitbutton" type="button" value="Submit Application" />
-    </form>
-
-    <div id="output" class="hideClass">
-        <h1 id="TitleForm"> File Transfer </h1>
-        <span id="ThankYou">Transfer complete! If you need to transfer another file, you can use the same link again. 
-     </span>
-    </div>
-
-</div>
-
-
-<script type="text/javascript">
-    document.getElementById('submitbutton').addEventListener("click", validatefunction);
-
-    function validatefunction() {
-        document.getElementById('submitbutton').val = 'Submitting...';
-        //check for required fields 
-        var j = 0;
-        var form = document.getElementById('myForm');
-        var elem = form.elements;
-        for (var i = 0; i < elem.length; i++) {
-            elem[i].className = "";
-            if (elem[i].value === "" && elem[i].hasAttribute('required')) {
-                elem[i].className = "warning";
-                j++;
-            }
-        }
-
-        if (j === 0) {
-            var btn = document.getElementById('submitbutton');
-            btn.disabled = true;
-            document.getElementById('incompleteWarning').style.display = 'none';
-            document.getElementById('bePatient').style.display = 'inline';
-            google.script.run.withSuccessHandler(fileUploaded).uploadFiles(this.parentNode);
-        } else {
-            document.getElementById('submitbutton').val = 'Submit Application';
-            document.getElementById('incompleteWarning').style.display = 'inline';
-            document.getElementById('incompleteWarning').style.color = 'red';
-        }
-    };
-</script>
-
 <script>
-    function fileUploaded(status) {
-        document.getElementById('myForm').style.display = 'none';
-        document.getElementById('output').style.display = 'inline';
+import React, { Component } from 'react';
+
+var SCOPE = 'https://www.googleapis.com/auth/drive.file';
+var discoveryUrl = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
+
+
+class App extends Component {
+  state = {
+    name: '',
+    googleAuth: ''
+  }
+  componentDidMount(){
+    var script = document.createElement('script');
+    script.onload=this.handleClientLoad;
+    script.src="https://apis.google.com/js/api.js";
+    document.body.appendChild(script);
+  }
+
+
+  initClient = () => {
+    try{
+      window.gapi.client.init({
+          'apiKey': "AIzaSyCdiLPQFh6Cz6JkokV1_jD5f6AL2w-GUA4",
+          'clientId': "1060240590170-m0dv69v3rluc6firqbk5b5akdoonqkfo.apps.googleusercontent.com",
+          'scope': SCOPE,
+          'discoveryDocs': [discoveryUrl]
+        }).then(() => {
+          this.setState({
+            googleAuth: window.gapi.auth2.getAuthInstance()
+          })
+          this.state.googleAuth.isSignedIn.listen(this.updateSigninStatus);  
+         document.getElementById('signin-btn').addEventListener('click', this.signInFunction);
+         document.getElementById('signout-btn').addEventListener('click', this.signOutFunction);
+
+      });
+    }catch(e){
+      console.log(e);
     }
-</script>
+  }
 
-<style>
-    input {
-        display: block;
-        margin: 20px;
+
+  signInFunction =()=>{
+    this.state.googleAuth.signIn();
+    this.updateSigninStatus()
+  }
+
+  signOutFunction =()=>{
+    this.state.googleAuth.signOut();
+    this.updateSigninStatus()
+  }
+
+  updateSigninStatus = ()=> {
+    this.setSigninStatus();
+  }
+
+
+  setSigninStatus= async ()=>{
+    var user = this.state.googleAuth.currentUser.get();
+    console.log(user)
+    if (user.wc == null){
+      this.setState({
+        name: ''
+      });
     }
-</style>
+    else{
+      var isAuthorized = user.hasGrantedScopes(SCOPE);
+      if(isAuthorized){
+        this.setState({
+          name: user.Ot.Cd
+        });
+        const boundary='foo_bar_baz'
+        const delimiter = "\r\n--" + boundary + "\r\n";
+        const close_delim = "\r\n--" + boundary + "--";
+        var fileName='mychat123';
+        var fileData='this is a sample data';
+        var contentType='text/plain'
+        var metadata = {
+          'name': fileName,
+          'mimeType': contentType
+        };
 
+        var multipartRequestBody =
+          delimiter +
+          'Content-Type: application/json; charset=UTF-8\r\n\r\n' +
+          JSON.stringify(metadata) +
+          delimiter +
+          'Content-Type: ' + contentType + '\r\n\r\n' +
+          fileData+'\r\n'+
+          close_delim;
 
-<script>
-function doGet(e) { 
-    return template = HtmlService.createHtmlOutputFromFile('form.html'); 
-    return template.evaluate().setSandboxMode(HtmlService.SandboxMode.IFRAME); 
-} 
+          console.log(multipartRequestBody);
+          var request = window.gapi.client.request({
+            'path': 'https://www.googleapis.com/upload/drive/v3/files',
+            'method': 'POST',
+            'params': {'uploadType': 'multipart'},
+            'headers': {
+              'Content-Type': 'multipart/related; boundary=' + boundary + ''
+            },
+            'body': multipartRequestBody});
+        request.execute(function(file) {
+          console.log(file)
+        });
+      }
+    }
+  }
 
-function uploadFiles(form) { 
+  handleClientLoad = ()=>{
+    window.gapi.load('client:auth2', this.initClient);
+  }
+  render() {
+    return (
+      <div className="App">
+        <div>UserName: <strong>{ this.state.name}</strong></div>
+        <button id="signin-btn">Sign In</button>
+        <button id="signout-btn">Sign Out</button>
+      </div>
+    );
+  }
+}
 
-    try { 
-
-    var dropbox = "File Transfer"; 
-    var folder, folders = DriveApp.getFoldersByName(dropbox); 
-
-    if (folders.hasNext()) { 
-     folder = folders.next(); 
-    } else { 
-     folder = DriveApp.createFolder(dropbox); 
-    } 
-
-
-    //Upload file and set various properties 
-    var mediaData = form.File1;  
-    var timeStamp = new Date(); 
-
-    var resource = { 
-     description: "File uploaded on: " + timeStamp 
-    }; 
-
-    var file = Drive.Files.insert(resource, mediaData); // create file using Drive API 
-    var fileId = file.id;  
-    var DriveAppFile = DriveApp.getFileById(fileId); // retrieve file in DriveApp scope. 
-
-    DriveApp.removeFile(DriveAppFile); // remove new file from Users root My Drive 
-    folder.addFile(DriveAppFile); // puts file in selected folder 
-
-    return "Thank you for your submission." 
-
-    } catch (error) { 
-    return error.toString(); 
-    } 
-} 
+export default App;
 
 
 </script>
