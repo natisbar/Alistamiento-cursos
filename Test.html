@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<!-- You can also include your own CSS styles -->
+<link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+
+<div class="form-style-10">
+    <title>File Transfer </title>
+
+    <form id="myForm" name="myForm">
+        <h1> File Transfer </h1>
+        <p></p>
+
+        <fieldset class="fields">
+            <div class="section"> Files </div>
+            <div class="inner-wrap">
+                <label for="File1"> File 1 </label>
+                <input type="file" name="File1" required />
+
+            </div>
+        </fieldset>
+
+        <p> </p>
+        <p id="incompleteWarning" class="hideClass"> Please select a file to transfer. </p>
+        <p id="bePatient" class="hideClass"> Please be patient while the file is being uploaded. Do not close or refresh the form. You will see a "transfer complete" message when the upload is finished.</p>
+
+        <input id="submitbutton" type="button" value="Submit Application" />
+    </form>
+
+    <div id="output" class="hideClass">
+        <h1 id="TitleForm"> File Transfer </h1>
+        <span id="ThankYou">Transfer complete! If you need to transfer another file, you can use the same link again. 
+     </span>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+    document.getElementById('submitbutton').addEventListener("click", validatefunction);
+
+    function validatefunction() {
+        document.getElementById('submitbutton').val = 'Submitting...';
+        //check for required fields 
+        var j = 0;
+        var form = document.getElementById('myForm');
+        var elem = form.elements;
+        for (var i = 0; i < elem.length; i++) {
+            elem[i].className = "";
+            if (elem[i].value === "" && elem[i].hasAttribute('required')) {
+                elem[i].className = "warning";
+                j++;
+            }
+        }
+
+        if (j === 0) {
+            var btn = document.getElementById('submitbutton');
+            btn.disabled = true;
+            document.getElementById('incompleteWarning').style.display = 'none';
+            document.getElementById('bePatient').style.display = 'inline';
+            google.script.run.withSuccessHandler(fileUploaded).uploadFiles(this.parentNode);
+        } else {
+            document.getElementById('submitbutton').val = 'Submit Application';
+            document.getElementById('incompleteWarning').style.display = 'inline';
+            document.getElementById('incompleteWarning').style.color = 'red';
+        }
+    };
+</script>
+
+<script>
+    function fileUploaded(status) {
+        document.getElementById('myForm').style.display = 'none';
+        document.getElementById('output').style.display = 'inline';
+    }
+</script>
+
+<style>
+    input {
+        display: block;
+        margin: 20px;
+    }
+</style>
+
+
+<script>
+function doGet(e) { 
+    return template = HtmlService.createHtmlOutputFromFile('form.html'); 
+    return template.evaluate().setSandboxMode(HtmlService.SandboxMode.IFRAME); 
+} 
+
+function uploadFiles(form) { 
+
+    try { 
+
+    var dropbox = "File Transfer"; 
+    var folder, folders = DriveApp.getFoldersByName(dropbox); 
+
+    if (folders.hasNext()) { 
+     folder = folders.next(); 
+    } else { 
+     folder = DriveApp.createFolder(dropbox); 
+    } 
+
+
+    //Upload file and set various properties 
+    var mediaData = form.File1;  
+    var timeStamp = new Date(); 
+
+    var resource = { 
+     description: "File uploaded on: " + timeStamp 
+    }; 
+
+    var file = Drive.Files.insert(resource, mediaData); // create file using Drive API 
+    var fileId = file.id;  
+    var DriveAppFile = DriveApp.getFileById(fileId); // retrieve file in DriveApp scope. 
+
+    DriveApp.removeFile(DriveAppFile); // remove new file from Users root My Drive 
+    folder.addFile(DriveAppFile); // puts file in selected folder 
+
+    return "Thank you for your submission." 
+
+    } catch (error) { 
+    return error.toString(); 
+    } 
+} 
+
+
+</script>
