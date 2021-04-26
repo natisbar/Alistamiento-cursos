@@ -31,7 +31,7 @@
 
   function successFunction(data) {
       var allRows = data.split(/\r?\n|\r/);
-      var info = '<div><p>';
+      var table = '<div><p>';
       // alert(allRows.length);
       for (var i = 0; i < allRows.length; i++) {
         var rowCells = allRows[i].split(',');
@@ -46,7 +46,7 @@
         table += '</div></p>';
       } 
       
-      $('body').append(info);
+      $('body').append(table);
     }
 </script>
 </body>
