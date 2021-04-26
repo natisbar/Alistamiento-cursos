@@ -36,13 +36,13 @@
       for (var i = 0; i < allRows.length-1; i++) {
         var rowCells = allRows[i].split(',');
         table += '<p>Actividad ';
-        table += rowCells[i];
+        table += rowCells[0];
         table += ': ';
-        table += rowCells[i + 1];
+        table += rowCells[1];
         table += ' - Fecha: ';
-        table += rowCells[i + 2];
+        table += rowCells[2];
         table += ' - Hora: ';
-        table += rowCells[i + 3];
+        table += rowCells[3];
         table += '</p>';
       } 
       table += '</div>';
