@@ -79,6 +79,7 @@
   function successFunction(data) {
       var allRows = data.split(/\r?\n|\r/);
       var table = '<table>';
+      alert(allRows.length);
       for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
         if (singleRow === 0) {
           table += '<thead>';
