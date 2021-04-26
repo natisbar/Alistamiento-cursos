@@ -9,61 +9,8 @@
   <title>Document</title>
 </head>
 <body>
-  <form class="form-inline">
-
-    <div class="form-group">
-      <label for="files">Upload a CSV formatted file:</label>
-      <input type="file" id="files" class="form-control" accept=".csv" required />
-    </div>
   
-    <div class="form-group">
-      <button type="submit" id="submit-file" class="btn btn-primary">Upload File</button>
-    </div>
-    
-  </form>
   <script>
-//     $('#submit-file').on("click",function(e){
-// 	e.preventDefault();
-// 	$('#files').parse({
-// 		config: {
-// 			delimiter: "auto",
-// 			complete: displayHTMLTable,
-// 		},
-// 		before: function(file, inputElem)
-// 		{
-// 			//console.log("Parsing file...", file);
-// 		},
-// 		error: function(err, file)
-// 		{
-// 			//console.log("ERROR:", err, file);
-// 		},
-// 		complete: function()
-// 		{
-// 			//console.log("Done with all files");
-// 		}
-// 	});
-// });
-
-// function displayHTMLTable(results) {
-//     var table = "<table class='table'>";
-//     var data = results.data;
-
-//     for (i = 0; i < data.length; i++) {
-//         table += "<tr>";
-//         var row = data[i];
-//         var cells = row.join(",").split(",");
-
-//         for (j = 0; j < cells.length; j++) {
-//             table += "< td > ";
-//             table += cells[j];
-//             table += "</th>";
-//         }
-//         table += "</tr>";
-//     }
-//     table += "</table>";
-
-//     $("#parsed_csv_list").html(table);
-// }
     var hola="hola mundo";
     // alert(hola);
     $.ajax({
@@ -76,40 +23,30 @@
 //       var allRows = data.split(/\r?\n|\r/);
 //       alert(allRows.length);
 //     }
+
+// var titulo = document.getElementById("titulo");
+// titulo.innerHTML = "Pronto nos estaremos comunicando!";
+
+
+
   function successFunction(data) {
       var allRows = data.split(/\r?\n|\r/);
-      var table = '<table>';
-      alert(allRows.length);
-      for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
-        if (singleRow === 0) {
-          table += '<thead>';
-          table += '<tr>';
-        } else {
-          table += '<tr>';
-        }
-        var rowCells = allRows[singleRow].split(',');
-        for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
-          if (singleRow === 0) {
-            table += '<th>';
-            table += rowCells[rowCell];
-            table += '</th>';
-          } else {
-            table += '<td>';
-            table += rowCells[rowCell];
-            table += '</td>';
-          }
-        }
-        if (singleRow === 0) {
-          table += '</tr>';
-          table += '</thead>';
-          table += '<tbody>';
-        } else {
-          table += '</tr>';
-        }
+      var info = '<div><p>';
+      // alert(allRows.length);
+      for (var i = 0; i < allRows.length; i++) {
+        var rowCells = allRows[i].split(',');
+        table += 'Actividad ';
+        table += rowCells[i];
+        table += ': ';
+        table += rowCells[i + 1];
+        table += ' - Fecha: ';
+        table += rowCells[i + 2];
+        table += ' - Hora: ';
+        table += rowCells[i + 3];
+        table += '</div></p>';
       } 
-      table += '</tbody>';
-      table += '</table>';
-      $('body').append(table);
+      
+      $('body').append(info);
     }
 </script>
 </body>
