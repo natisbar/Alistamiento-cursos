@@ -71,16 +71,12 @@
       dataType: 'text',
     }).done(successFunction);
     
-    // alert(data);
-    function successFunction(data) {
-      var allRows = data.split(/\r?\n|\r/);
-      alert(allRows.length);
-    }
-  
-  </script>
-  
-  
-  <!-- function successFunction(data) {
+//     // alert(data);
+//     function successFunction(data) {
+//       var allRows = data.split(/\r?\n|\r/);
+//       alert(allRows.length);
+//     }
+  function successFunction(data) {
       var allRows = data.split(/\r?\n|\r/);
       var table = '<table>';
       for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
@@ -113,7 +109,8 @@
       table += '</tbody>';
       table += '</table>';
       $('body').append(table);
-    } -->
+    }
+</script>
 </body>
 </html>
 
